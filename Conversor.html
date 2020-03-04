@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Base Numérica</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Conversor de Base Numérica</h1>
+    </header>
+    <section id="centro">
+        <div id="explicacao">
+            <p>Digite um número <strong>inteiro</strong> em apenas um dos campos abaixo e pressione o botão converter para descobrir o seu equivalente nas demais bases numéricas!</p>
+        </div>  
+        <div id="bases">
+            <table>
+                <tr>
+                    <td>Decimal: </td>
+                    <td><input type="number" name="decimal" id="decimal"></td>
+                </tr>
+                <tr>
+                    <td>Binário: </td>
+                    <td><input type="number" name="binario" id="binario"></td>
+                </tr>    
+                <tr>    
+                    <td>Hexadecimal: </td>
+                    <td><input type="number" name="hexadecimal" id="hexadecimal"></td>
+                </tr>
+            </table>
+            <input type="button" value="Converter" name="converter" id="converter" onclick="converter()" class="button">
+        </div>
+    </section>
+</body>
+</html>
