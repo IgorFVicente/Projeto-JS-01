@@ -18,20 +18,37 @@
         <div id="bases">
             <table>
                 <tr>
-                    <td>Decimal: </td>
+                    <td><input type="radio" name="tipo" id="tipo0" onclick="decimal()"><label for="tipo0">Decimal: </label></td>
                     <td><input type="number" name="decimal" id="decimal"></td>
                 </tr>
                 <tr>
-                    <td>Binário: </td>
+                    <td><input type="radio" name="tipo" id="tipo1" onclick="binario()"><label for="tipo1">Binário: </label></td>
                     <td><input type="number" name="binario" id="binario"></td>
                 </tr>    
                 <tr>    
-                    <td>Hexadecimal: </td>
+                    <td><input type="radio" name="tipo" id="tipo2" onclick="hexadecimal()"><label for="tipo2">Hexadecimal: </label></td>
                     <td><input type="number" name="hexadecimal" id="hexadecimal"></td>
                 </tr>
             </table>
             <input type="button" value="Converter" name="converter" id="converter" onclick="converter()" class="button">
+            <div id="res">
+                <table>
+                    <tr>
+                        <td>Decimal: </td>
+                        <td><input type="number" name="decimal" id="decimal"></td>
+                    </tr>
+                    <tr>
+                        <td>Binário: </td>
+                        <td><input type="number" name="binario" id="binario"></td>
+                    </tr>    
+                    <tr>    
+                        <td>Hexadecimal: </td>
+                        <td><input type="number" name="hexadecimal" id="hexadecimal"></td>
+            </div>
         </div>
     </section>
+    <footer id="autoria">
+        <p>Igor Fernandes Vicente - 04/03/2020</p>
+    </footer>
 </body>
 </html>
