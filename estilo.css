@@ -83,6 +83,11 @@ a {
     color: black;
 }
 
+input {
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
 [tooltip]:before {
     position: absolute;
     content: attr(tooltip);

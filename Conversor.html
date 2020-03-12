@@ -14,33 +14,33 @@
     </header>
     <main>
         <div id="cima">
-            <h2>Digite um número <strong>inteiro</strong> em apenas um dos campos abaixo e pressione o botão converter para descobrir seus equivalentes nas demais bases numéricas!</h2>
+            <h2>Digite um número <strong>natural</strong> em apenas um dos campos abaixo e pressione o botão converter para descobrir seus equivalentes nas demais bases numéricas!</h2>
         </div>
         <div id="calculos">
             <div id="item1">
                 <table>
                     <tr>
                         <td>
-                            <input type="radio" name="tipo" id="tipo0" onclick="decimal()"><label for="tipo0">Decimal: 
+                            <input type="radio" class="radio" name="tipo" id="tipo0" onclick="decimal()"><label for="tipo0">Decimal: 
                         </td>
                         <td>
-                            </label><input type="number" id="decimal">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="radio" name="tipo" id="tipo1" onclick="binario()"><label for="tipo1">Binário: </label>
-                        </td>
-                        <td>
-                            <input type="number" id="binario" pattern="[0-1]">
+                            </label><input type="number" id="decimal" disabled>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="radio" name="tipo" id="tipo2" onclick="hexadecimal()"><label for="tipo2">Hexadecimal: </label>
+                            <input type="radio" class="radio" name="tipo" id="tipo1" onclick="binario()"><label for="tipo1">Binário: </label>
                         </td>
                         <td>
-                            <input type="text" id="hexadecimal">
+                            <input type="text" id="binario" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" class="radio" name="tipo" id="tipo2" onclick="hexadecimal()"><label for="tipo2">Hexadecimal: </label>
+                        </td>
+                        <td>
+                            <input type="text" id="hexadecimal" disabled>
                         </td>
                     </tr>
                 </table>
