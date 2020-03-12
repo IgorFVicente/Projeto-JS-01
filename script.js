@@ -47,12 +47,16 @@ function decbin(x) {
 
 function dechex(x) {
     let reshex = ""
-    while (x > 16){
+    if (x < 16) {
+        reshex = String(subhex(x))
+    } else {
+    while (x >= 16){
         reshex += String(subhex(x % 16))
         x = Math.trunc(x / 16)
     }
     reshex += String(x)
     reshex = reshex.split('').reverse().join('')
+    }
     return reshex
 }
 
