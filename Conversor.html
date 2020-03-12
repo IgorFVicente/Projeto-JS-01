@@ -3,52 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Base Numérica</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Conversor de bases numéricas</title>
+    <link rel="stylesheet" type="text/CSS" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </head>
-<body>
+    <body>
     <header>
         <h1>Conversor de Base Numérica</h1>
     </header>
-    <section id="centro">
-        <div id="explicacao">
-            <p>Digite um número <strong>inteiro</strong> em apenas um dos campos abaixo e pressione o botão converter para descobrir o seu equivalente nas demais bases numéricas!</p>
-        </div>  
-        <div id="bases">
-            <table>
-                <tr>
-                    <td><input type="radio" name="tipo" id="tipo0" onclick="decimal()"><label for="tipo0">Decimal: </label></td>
-                    <td><input type="number" name="decimal" id="decimal"></td>
-                </tr>
-                <tr>
-                    <td><input type="radio" name="tipo" id="tipo1" onclick="binario()"><label for="tipo1">Binário: </label></td>
-                    <td><input type="number" name="binario" id="binario"></td>
-                </tr>    
-                <tr>    
-                    <td><input type="radio" name="tipo" id="tipo2" onclick="hexadecimal()"><label for="tipo2">Hexadecimal: </label></td>
-                    <td><input type="number" name="hexadecimal" id="hexadecimal"></td>
-                </tr>
-            </table>
-            <input type="button" value="Converter" name="converter" id="converter" onclick="converter()" class="button">
-            <div id="res">
+    <main>
+        <div id="cima">
+            <h2>Digite um número <strong>inteiro</strong> em apenas um dos campos abaixo e pressione o botão converter para descobrir seus equivalentes nas demais bases numéricas!</h2>
+        </div>
+        <div id="calculos">
+            <div id="item1">
                 <table>
                     <tr>
-                        <td>Decimal: </td>
-                        <td><input type="number" name="decimal" id="decimal"></td>
+                        <td>
+                            <input type="radio" name="tipo" id="tipo0" onclick="decimal()"><label for="tipo0">Decimal: 
+                        </td>
+                        <td>
+                            </label><input type="number" id="decimal">
+                        </td>
                     </tr>
                     <tr>
-                        <td>Binário: </td>
-                        <td><input type="number" name="binario" id="binario"></td>
-                    </tr>    
-                    <tr>    
-                        <td>Hexadecimal: </td>
-                        <td><input type="number" name="hexadecimal" id="hexadecimal"></td>
+                        <td>
+                            <input type="radio" name="tipo" id="tipo1" onclick="binario()"><label for="tipo1">Binário: </label>
+                        </td>
+                        <td>
+                            <input type="number" id="binario" pattern="[0-1]">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="radio" name="tipo" id="tipo2" onclick="hexadecimal()"><label for="tipo2">Hexadecimal: </label>
+                        </td>
+                        <td>
+                            <input type="text" id="hexadecimal">
+                        </td>
+                    </tr>
+                </table>
+            </div>    
+
+            <div id="item2">
+                <input type="button" name="converter" class="button" id="converter" value="Converter!" onclick="converter()">
+            </div>
+
+            <div id="item3">
+                <table>
+                    <tr>
+                        <td>
+                            Decimal: 
+                        </td>
+                        <td>
+                            <input type="number" id="resdec" readonly disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Binário: 
+                        </td>
+                        <td>
+                            <input type="text" id="resbin" readonly disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hexadecimal: 
+                        </td>
+                        <td>    
+                            <input type="text" id="reshex" readonly disabled>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
-    </section>
-    <footer id="autoria">
-        <p>Igor Fernandes Vicente - 04/03/2020</p>
+    </main>
+    <footer>
+        <span tooltip="Link to Github page">
+            <a href="https://github.com/IgorFVicente/" target="_blank">@IgorFVicente</a>
+        </span>
+            - 11/03/2020
     </footer>
-</body>
+    </body>
 </html>

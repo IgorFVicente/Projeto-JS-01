@@ -1,0 +1,8 @@
+d = 100
+potencia = 0
+
+while (2 ^ potencia < d) {
+    potencia += 1
+}
+
+console.log(potencia)
