@@ -1,29 +1,29 @@
 var tipo = ""
 var erro = false
-var dighexa = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
+var dighexa = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
 
 function binver(x) {
     erro = false
     x = x.split('')
-    for(let c = 0; c < x.length; c++) {
-        if (x[c] !== "1" && x[c] !== "0"){
+    for (let c = 0; c < x.length; c++) {
+        if (x[c] !== "1" && x[c] !== "0") {
             erro = true
-        } 
+        }
     }
 }
 
 function hexver(x) {
     erro = false
     x = x.split('')
-    for(let c = 0; c < x.length; c++) {
+    for (let c = 0; c < x.length; c++) {
         if (dighexa.indexOf(x[c].toUpperCase()) == -1)
-        erro = true
+            erro = true
     }
 }
 
 function subhex(x) {
     x = Number(x)
-    if(x >= 10 && x <= 15) {
+    if (x >= 10 && x <= 15) {
         x = dighexa[x]
     }
     return String(x)
@@ -32,10 +32,9 @@ function subhex(x) {
 function decbin(x) {
     let potencia = 0
     let resbin = ""
-    while (2 ** potencia < x){
+    while (2 ** potencia < x) {
         potencia += 1
     }
-    potencia -= 1
     while (potencia !== -1) {
         if (x >= 2 ** potencia) {
             resbin += "1"
@@ -45,6 +44,7 @@ function decbin(x) {
         }
         potencia -= 1
     }
+
     return resbin
 }
 
@@ -53,12 +53,12 @@ function dechex(x) {
     if (x < 16) {
         reshex = String(subhex(x))
     } else {
-    while (x >= 16){
-        reshex += String(subhex(x % 16))
-        x = Math.trunc(x / 16)
-    }
-    reshex += String(subhex(x))
-    reshex = reshex.split('').reverse().join('')
+        while (x >= 16) {
+            reshex += String(subhex(x % 16))
+            x = Math.trunc(x / 16)
+        }
+        reshex += String(subhex(x))
+        reshex = reshex.split('').reverse().join('')
     }
     return reshex
 }
@@ -66,7 +66,7 @@ function dechex(x) {
 function bindec(x) {
     res = 0
     x = x.split('').reverse()
-    for(c = 0;c < x.length;c++){
+    for (c = 0; c < x.length; c++) {
         res += x[c] * (2 ** c)
     }
     return res
@@ -75,7 +75,7 @@ function bindec(x) {
 function hexdec(x) {
     let resdec = 0
     x = x.split('').reverse()
-    for(c = 0; c < x.length; c++){
+    for (c = 0; c < x.length; c++) {
         let y = dighexa.indexOf(x[c].toUpperCase())
         resdec += y * (16 ** c)
     }
@@ -86,7 +86,7 @@ function converter() {
     let d = Number(document.getElementById('decimal').value)
     let b = document.getElementById('binario').value
     let h = document.getElementById('hexadecimal').value
-    switch(tipo)  {
+    switch (tipo) {
         case 'decimal':
             if (d == "") {
                 alert("Por favor, digite um número a ser convertido")
@@ -100,7 +100,7 @@ function converter() {
                 document.getElementById('resbin').value = resbin
                 document.getElementById('reshex').value = reshex
             }
-        break
+            break
         case 'binario':
             binver(b)
             if (erro == true) {
@@ -117,7 +117,7 @@ function converter() {
                 document.getElementById('resbin').value = b
                 document.getElementById('reshex').value = reshex
             }
-        break
+            break
         case 'hexadecimal':
             hexver(h)
             if (erro == true) {
@@ -134,7 +134,7 @@ function converter() {
                 document.getElementById('resbin').value = resbin
                 document.getElementById('reshex').value = h
             }
-        break
+            break
     }
 }
 
@@ -143,7 +143,7 @@ function decimal() {
     document.getElementById('binario').disabled = true
     document.getElementById('hexadecimal').disabled = true
     document.getElementById('binario').value = ""
-    document.getElementById('hexadecimal').value = "" 
+    document.getElementById('hexadecimal').value = ""
     tipo = "decimal"
 }
 
@@ -152,7 +152,7 @@ function binario() {
     document.getElementById('binario').disabled = false
     document.getElementById('hexadecimal').disabled = true
     document.getElementById('decimal').value = ""
-    document.getElementById('hexadecimal').value = "" 
+    document.getElementById('hexadecimal').value = ""
     tipo = "binario"
 }
 
@@ -161,6 +161,6 @@ function hexadecimal() {
     document.getElementById('binario').disabled = true
     document.getElementById('hexadecimal').disabled = false
     document.getElementById('binario').value = ""
-    document.getElementById('decimal').value = "" 
+    document.getElementById('decimal').value = ""
     tipo = "hexadecimal"
 }
